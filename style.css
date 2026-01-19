@@ -1,5 +1,7 @@
 /* Global Reset & Box Sizing */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -9,11 +11,13 @@ body {
     font-family: 'Rubik', sans-serif;
     height: 100vh;
     width: 100vw;
-    overflow: hidden; /* Prevent scrollbars from scattered items */
+    overflow: hidden;
+    /* Prevent scrollbars from scattered items */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #0d1b2a; /* Fallback dark blue */
+    background-color: #0d1b2a;
+    /* Fallback dark blue */
     background-image: url('images/background.png');
     background-size: cover;
     background-position: center;
@@ -28,7 +32,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* 40% dark overlay */
+    background: rgba(0, 0, 0, 0.4);
+    /* 40% dark overlay */
     z-index: 1;
 }
 
@@ -48,21 +53,25 @@ main {
     color: #ffffff;
     font-size: 5rem;
     font-weight: 700;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 4px 10px rgba(0,0,0,0.5);
-    z-index: 100; /* Always on top */
-    pointer-events: none; /* Let clicks pass through to photos below if they overlap */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    /* Always on top */
+    pointer-events: none;
+    /* Let clicks pass through to photos below if they overlap */
     white-space: nowrap;
 }
 
 /* Photo Card Styles (Polaroid look) */
 .photo-card {
     position: absolute;
-    padding: 10px 10px 30px 10px; /* Extra bottom padding for polaroid look */
+    padding: 10px 10px 30px 10px;
+    /* Extra bottom padding for polaroid look */
     background-color: #fff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), z-index 0s;
     cursor: pointer;
-    width: 250px; /* Fixed width for consistency */
+    width: 250px;
+    /* Fixed width for consistency */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,54 +80,67 @@ main {
 .photo-card img {
     width: 100%;
     height: auto;
-    aspect-ratio: 1 / 1; /* Force square for neatness, or remove for natural aspect ratio */
+    aspect-ratio: 1 / 1;
+    /* Force square for neatness, or remove for natural aspect ratio */
     object-fit: cover;
     display: block;
-    background: #eee; /* Placeholder bg */
+    background: #eee;
+    /* Placeholder bg */
 }
 
 /* Hover Effect: Pop up and straighten */
 .photo-card:hover {
-    transform: scale(1.1) rotate(0deg) !important; /* Override individual rotations */
+    transform: scale(1.1) rotate(0deg) !important;
+    /* Override individual rotations */
     z-index: 50;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* 
     Scatter Positions 
     Using viewport units (vw, vh) to position them somewhat responsively.
+    Moved further to edges to avoid text overlap.
 */
 
 /* Top Left */
 .pos-1 {
-    top: 15%;
-    left: 15%;
+    top: 5%;
+    left: 5%;
     transform: rotate(-12deg);
     z-index: 5;
 }
 
 /* Bottom Right */
 .pos-2 {
-    bottom: 20%;
-    right: 20%;
+    bottom: 5%;
+    right: 5%;
     transform: rotate(8deg);
     z-index: 6;
 }
 
 /* Top Right */
 .pos-3 {
-    top: 25%;
-    right: 15%;
+    top: 5%;
+    right: 5%;
     transform: rotate(15deg);
     z-index: 4;
 }
 
 /* Center-ish / Floating */
+/* Bottom Left */
 .pos-4 {
-    bottom: 15%;
-    left: 25%;
+    bottom: 5%;
+    left: 5%;
     transform: rotate(-5deg);
     z-index: 7;
+}
+
+/* Top Center-ish */
+.pos-5 {
+    top: 5%;
+    left: 45%;
+    transform: rotate(3deg);
+    z-index: 3;
 }
 
 /* Responsive Adjustments */
@@ -128,14 +150,41 @@ main {
         width: 100%;
         text-align: center;
     }
-    
+
     .photo-card {
-        width: 180px;
+        width: 150px;
+        /* Smaller on mobile */
         padding: 5px 5px 20px 5px;
     }
-    
-    /* Reposition slightly for mobile so they don't cover the text too much */
-    .pos-1 { top: 10%; left: 5%; }
-    .pos-2 { bottom: 10%; right: 5%; }
-    .pos-3 { top: 60%; left: 10%; } /* Moving generic positions around */
+
+    /* Reposition for mobile - stick to corners/edges */
+    .pos-1 {
+        top: 2%;
+        left: 2%;
+    }
+
+    .pos-2 {
+        bottom: 2%;
+        right: 2%;
+    }
+
+    .pos-3 {
+        top: 2%;
+        right: 2%;
+    }
+
+    .pos-4 {
+        bottom: 2%;
+        left: 2%;
+        z-index: 8;
+    }
+
+    /* Hide pos-5 on very small screens if crowded, or put it bottom center */
+    .pos-5 {
+        bottom: 2%;
+        left: 50%;
+        transform: translateX(-50%) rotate(2deg);
+        top: auto;
+        right: auto;
+    }
 }
