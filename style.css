@@ -143,6 +143,14 @@ main {
     z-index: 3;
 }
 
+/* Bottom Center - The requested new image */
+.pos-center-bottom {
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    z-index: 10;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .main-title {
