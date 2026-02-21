@@ -7,46 +7,67 @@
     <title>הגיע הזמן לישון</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;800&family=Assistant:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="background-overlay"></div>
 
-    <main>
-        <h1 class="main-title">הגיע הזמן לישון!</h1>
+    <main class="page-shell">
+        <header class="hero-card">
+            <p class="eyebrow">גלריית רגעים נעימים</p>
+            <h1 class="main-title">הגיע הזמן לישון ✨</h1>
+            <p class="subtitle">זיכרונות חמים, צבעים רגועים ותצוגה חדשה ומעוצבת לקראת לילה מתוק.</p>
+        </header>
 
-        <div class="scatter-container">
-            <!-- 
-                SCATTERED PHOTOS 
-                Add or remove <img> tags here.
-                To change images, replace the files in the 'images' folder.
-            -->
-            <div class="photo-card pos-1">
-                <img src="images/photo1.jpg" alt="Family Photo 1">
+        <section class="gallery-panel">
+            <h2>הרגעים האהובים</h2>
+            <div class="photo-grid">
+                <article class="photo-card tilt-left">
+                    <img src="images/photo1.jpg" alt="רגע משפחתי 1">
+                </article>
+                <article class="photo-card tilt-right">
+                    <img src="images/photo2.jpg" alt="רגע משפחתי 2">
+                </article>
+                <article class="photo-card tilt-left-soft">
+                    <img src="images/photo3.jpg" alt="רגע משפחתי 3">
+                </article>
+                <article class="photo-card tilt-right-soft">
+                    <img src="images/photo4.jpg" alt="רגע משפחתי 4">
+                </article>
+                <article class="photo-card tilt-left">
+                    <img src="images/photo5.jpg" alt="רגע משפחתי 5">
+                </article>
+                <article class="photo-card tilt-right">
+                    <img src="images/WhatsApp%20Image%202026-01-27%20at%2014.32.47.jpeg" alt="רגע מיוחד נוסף">
+                </article>
             </div>
+        </section>
 
-            <div class="photo-card pos-2">
-                <img src="images/photo2.jpg" alt="Family Photo 2">
+        <section class="gallery-panel generated-panel">
+            <h2>גרסאות אומנותיות בהשראת התמונות</h2>
+            <div class="generated-grid">
+                <figure class="art-card dreamy">
+                    <img src="images/photo1.jpg" alt="גרסה חלומית לתמונה 1">
+                    <figcaption>חלומית</figcaption>
+                </figure>
+                <figure class="art-card sunset">
+                    <img src="images/photo2.jpg" alt="גרסה חמה לתמונה 2">
+                    <figcaption>שקיעה חמימה</figcaption>
+                </figure>
+                <figure class="art-card mono">
+                    <img src="images/photo3.jpg" alt="גרסה מונוכרומטית לתמונה 3">
+                    <figcaption>מונוכרום רך</figcaption>
+                </figure>
+                <figure class="art-card pop">
+                    <img src="images/photo4.jpg" alt="גרסת פופ לתמונה 4">
+                    <figcaption>פופ צבעוני</figcaption>
+                </figure>
             </div>
-
-            <div class="photo-card pos-3">
-                <img src="images/photo3.jpg" alt="Family Photo 3">
-            </div>
-
-            <div class="photo-card pos-4">
-                <img src="images/photo4.jpg" alt="Family Photo 4">
-            </div>
-
-            <div class="photo-card pos-5">
-                <img src="images/photo5.jpg" alt="Family Photo 5">
-            </div>
-
-            <div class="photo-card pos-center-bottom">
-                <img src="images/WhatsApp%20Image%202026-01-27%20at%2014.32.47.jpeg" alt="Center Bottom Photo">
-            </div>
-        </div>
+        </section>
     </main>
 </body>
 
